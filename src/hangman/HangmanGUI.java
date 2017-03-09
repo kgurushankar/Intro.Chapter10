@@ -16,9 +16,10 @@ public class HangmanGUI extends JPanel implements ActionListener {
 	HangmanGame game;
 	JPanel mainInfo, win;
 	JButton again;
+	private static String[] words = { "inheritance", "abstraction", "encapsulation", "polymorphism" };
 
 	public HangmanGUI() {
-		game = new HangmanGame();
+		game = new HangmanGame(words[(int) (Math.random() * words.length)]);
 
 		numWrong = 0;
 		// picture[0] = "PATHS";
@@ -65,9 +66,9 @@ public class HangmanGUI extends JPanel implements ActionListener {
 		word.setText(game.getGuessed());
 		misses.setText(game.getTried());
 		missNum.setText("Number of Failed Guesses: " + numWrong);
-		
+
 		if (e.getSource() == guess) {
-			//System.out.println(this.getWidth() + " " + this.getHeight());
+			// System.out.println(this.getWidth() + " " + this.getHeight());
 
 			String a = guess.getText();
 			if (a.length() == 1) {
@@ -75,9 +76,9 @@ public class HangmanGUI extends JPanel implements ActionListener {
 				if (b == -1) {
 					++numWrong;
 					guess.setText("Incorrect");
-				} else if (b==0){
-					guess.setText("You have already guessed "+a.charAt(0));
-				} else if (b==1){
+				} else if (b == 0) {
+					guess.setText("You have already guessed " + a.charAt(0));
+				} else if (b == 1) {
 					guess.setText("Correct");
 				}
 
@@ -85,30 +86,28 @@ public class HangmanGUI extends JPanel implements ActionListener {
 				guess.setText("Your input was too long!");
 			}
 
-
 			if (game.getGuessed().equals(game.getWord())) {
-				add(win,BorderLayout.SOUTH);
+				add(win, BorderLayout.SOUTH);
 				validate();
 				repaint();
-				//System.out.println("Win");
+				// System.out.println("Win");
 			}
 			guess.selectAll();
 		}
 		if (e.getSource() == again) {
-			//System.out.println("Again...");
+			// System.out.println("Again...");
 			remove(win);
 			validate();
 			repaint();
-			numWrong=0;
+			numWrong = 0;
 			guess.setText("Enter your guess here");
 			game = new HangmanGame();
 			guess.selectAll();
-			
+
 		}
 		word.setText(game.getGuessed());
 		misses.setText(game.getTried());
 		missNum.setText("Number of Failed Guesses: " + numWrong);
-
 
 	}
 
