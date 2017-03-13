@@ -9,7 +9,7 @@ public class HangmanCMD {
 
 		Scanner in = new Scanner(System.in);
 		String word = words[(int) (Math.random() * words.length)];
-		HangmanGame game = new HangmanGame("inheritance");
+		HangmanGame game = new HangmanGame(word);
 		word = game.getWord();
 		int count = 0;
 		int failedGuesses = 0;
