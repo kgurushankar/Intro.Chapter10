@@ -1,4 +1,4 @@
-package excercises;
+package toolbox;
 
 import java.awt.*;
 import java.awt.event.*;

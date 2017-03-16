@@ -1,4 +1,4 @@
-package excercises;
+package toolbox;
 
 public class StringToolBox {
 
