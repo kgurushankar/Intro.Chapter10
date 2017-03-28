@@ -135,14 +135,17 @@ public class StringTest extends JFrame implements ActionListener {
 			case (13): {
 				num.setEditable(true);
 				result.setText(StringToolBox.Ceasar.encrypt(input.getText(), Integer.parseInt(num.getText())));
+				break;
 			}
 			case (14): {
 				result.setText((a.isPalindrome(input.getText())) ? (input.getText() + " is a palindrome")
 						: (input.getText() + " is not a palindrome"));
+				break;
 			}
 			case (15):{
 				result.setText((a.goodPassword(input.getText())) ? (input.getText() + " is a good password")
 						: (input.getText() + " is not a good password"));
+				break;
 			}
 			}
 		} catch (Exception ex) {
