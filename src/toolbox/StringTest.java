@@ -27,7 +27,7 @@ public class StringTest extends JFrame implements ActionListener {
 
 		String[] options = { "Ends with an asterisk", "Ends with two asterisks", "Remove dashes",
 				"Reformat date with \"/\" to date with \"-\"", "Last 4 characters of a string",
-				"Last n characters of a string", "Last 5 characters of a string", "Move first character to end",
+				"Last 5 characters of a string", "Last n characters of a string", "Move first character to end",
 				"Convert a name in \"lastname, firstname\" format to \"firstname lastname\"",
 				"Convert a name in format \"firstname lastname\" in format \"firstname LASTNAME",
 				"Negate a bit sequence", "Check if a string only contains one character", "Remove comments",
@@ -77,7 +77,7 @@ public class StringTest extends JFrame implements ActionListener {
 				break;
 			}
 			case (2): {
-				
+
 				result.setText(a.removeDashes(input.getText()));
 				break;
 			}
@@ -142,7 +142,7 @@ public class StringTest extends JFrame implements ActionListener {
 						: (input.getText() + " is not a palindrome"));
 				break;
 			}
-			case (15):{
+			case (15): {
 				result.setText((a.goodPassword(input.getText())) ? (input.getText() + " is a good password")
 						: (input.getText() + " is not a good password"));
 				break;
@@ -151,7 +151,7 @@ public class StringTest extends JFrame implements ActionListener {
 		} catch (Exception ex) {
 			result.setText("Error");
 		}
-		if (input.getText().equals("")){
+		if (input.getText().equals("")) {
 			result.setText("Please enter input");
 		}
 		input.selectAll();
