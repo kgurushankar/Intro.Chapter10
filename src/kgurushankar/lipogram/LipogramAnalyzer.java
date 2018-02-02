@@ -1,4 +1,4 @@
-package lipogram;
+package kgurushankar.lipogram;
 
 public class LipogramAnalyzer {
 	String str;

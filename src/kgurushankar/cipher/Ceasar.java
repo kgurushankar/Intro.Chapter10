@@ -1,4 +1,4 @@
-package cipher;
+package kgurushankar.cipher;
 
 import java.util.Scanner;
 
@@ -6,12 +6,13 @@ public class Ceasar {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		String message = in.nextLine();
-		//only if needs to be hardcoded
-		//message = "Lttlqj ltllqjx ljjp lqfxxjx";
+		// only if needs to be hardcoded
+		// message = "Lttlqj ltllqjx ljjp lqfxxjx";
 		Ceasar a = new Ceasar();
 		for (int i = 0; i < 26; i++) {
 			System.out.println(a.encrypt(message, i));
 		}
+		System.out.println();
 	}
 
 	public String encrypt(String s, int key) {
@@ -25,7 +26,6 @@ public class Ceasar {
 				sb.append(s.charAt(i));
 			}
 		}
-
 		return sb.toString();
 	}
 
@@ -35,7 +35,8 @@ public class Ceasar {
 			int y = x - 65;
 			int z = Math.floorMod(y, 26);
 			return (char) (z + 65);
-		} if(Character.isLowerCase(c)){
+		}
+		if (Character.isLowerCase(c)) {
 			int y = x - 97;
 			int z = Math.floorMod(y, 26);
 			return (char) (z + 97);

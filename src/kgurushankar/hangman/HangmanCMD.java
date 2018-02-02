@@ -1,4 +1,4 @@
-package hangman;
+package kgurushankar.hangman;
 
 import java.util.Scanner;
 

@@ -5,4 +5,4 @@
  * @author kesha
  *
  */
-package lipogram;
+package kgurushankar.lipogram;

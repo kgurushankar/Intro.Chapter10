@@ -1,4 +1,4 @@
-package lipogram;
+package kgurushankar.lipogram;
 
 import java.awt.*;
 import java.awt.event.*;

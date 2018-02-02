@@ -1,4 +1,4 @@
-package hangman;
+package kgurushankar.hangman;
 
 import java.io.*;
 import java.nio.file.*;
@@ -10,7 +10,7 @@ public class HangmanGame {
 	StringBuffer chars;
 
 	public HangmanGame() {
-		String FilePath = "C:/Users/kesha/Google Drive/CS/EclipseWorkspace/Chapter 10 — Strings/src/hangman/words.txt";
+		String FilePath = "C:/Users/kesha/Google Drive/CS/EclipseWorkspace/Chapter 10 ï¿½ Strings/src/hangman/words.txt";
 		try {
 			BufferedReader f = new BufferedReader(new FileReader(FilePath));
 			String test = "";

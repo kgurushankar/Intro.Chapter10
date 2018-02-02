@@ -1,4 +1,4 @@
-package cipher;
+package kgurushankar.cipher;
 
 /**
  * The isogram cipher takes an isogram (a word with no repeating letters) as the
@@ -11,7 +11,7 @@ public class Isogram {
 		int SHIFT = 1;
 		// key
 		String ISOGRAM = "subdermatoglyphic";
-		String message = "Meet me at secret location at noon on Wednesday";
+		String message = "google goggle great glasses";
 
 		String ciphertext = encrypt(ISOGRAM, message, SHIFT);
 		System.out.println("Ciphertext:\t\t" + ciphertext);

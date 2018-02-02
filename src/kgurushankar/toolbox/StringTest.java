@@ -1,4 +1,4 @@
-package toolbox;
+package kgurushankar.toolbox;
 
 import java.awt.*;
 import java.awt.event.*;

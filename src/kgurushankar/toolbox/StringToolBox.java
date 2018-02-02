@@ -1,4 +1,4 @@
-package toolbox;
+package kgurushankar.toolbox;
 
 public class StringToolBox {
 
@@ -20,9 +20,8 @@ public class StringToolBox {
 	/** 4 */
 	public String dateFormat(String s) {
 		String[] date = s.split("/");
-		date[0] = (date[0].length() < 2) ? ("0" + date[0]) : date[0];
-		date[1] = (date[1].length() < 2) ? ("0" + date[1]) : date[1];
-		return date[0] + "-" + date[1] + "-" + date[2];
+		return ((date[0].length() < 2) ? ("0" + date[0]) : date[0]) + "-"
+				+ ((date[1].length() < 2) ? ("0" + date[1]) : date[1]) + "-" + date[2];
 
 	}
 
@@ -70,7 +69,8 @@ public class StringToolBox {
 
 	/** firstname LASTNAME */
 	public String NameEcho(String s) {
-		return s.substring(0, s.indexOf(' ')) + s.substring(s.indexOf(' '), s.length()).toUpperCase();
+		return s.trim().substring(0, s.trim().indexOf(' '))
+				+ s.trim().substring(s.trim().indexOf(' '), s.trim().length()).toUpperCase();
 	}
 
 	public static class Ceasar {
@@ -106,11 +106,31 @@ public class StringToolBox {
 		}
 	}
 
-	public boolean isPalindrome(String s){
-		return (((new StringBuilder(s).reverse()).toString()).equals(s));
+	public boolean isPalindrome2(String s) {
+		return (((new StringBuilder(s.replaceAll(" ", "")).reverse()).toString())
+				.equalsIgnoreCase(s.replaceAll(" ", "")));
 	}
 
-	public boolean goodPassword(String s){
-		return (!(s.contains(" ")))&&(s.length()>=7)&&(!(s.toUpperCase().equals(s)))&&(!(s.toLowerCase().equals(s)))&&(!(s.replaceAll("[*0-9]", "").equals(s)));
+	public boolean isPalindrome(String s) {
+		int start = 0;
+		int end = s.length() - 1;
+		while (start < end) {
+			if (!Character.isLetter(s.charAt(start))) {
+				start++;
+			} else if (!Character.isLetter(s.charAt(end))) {
+				end--;
+			} else if (s.charAt(start) != s.charAt(end)) {
+				return false;
+			} else {
+				start++;
+				end--;
+			}
+		}
+		return true;
+	}
+
+	public boolean goodPassword(String s) {
+		return (!(s.contains(" "))) && (s.length() >= 7) && (!(s.toUpperCase().equals(s)))
+				&& (!(s.toLowerCase().equals(s))) && (!(s.replaceAll("[*0-9]", "").equals(s)));
 	}
 }

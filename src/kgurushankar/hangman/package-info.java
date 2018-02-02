@@ -5,4 +5,4 @@
  * @author kgurushankar773
  *
  */
-package hangman;
+package kgurushankar.hangman;
